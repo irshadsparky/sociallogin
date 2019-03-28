@@ -1,1 +1,1 @@
-include ':app', ':SocialLogin'
+include ':app'
