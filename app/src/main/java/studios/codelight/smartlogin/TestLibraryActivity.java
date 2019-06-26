@@ -7,7 +7,7 @@ import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
-import android.util.Log;
+import com.sociallogin.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,7 +54,7 @@ public class TestLibraryActivity extends AppCompatActivity implements SmartLogin
         config.setFacebookAppId(getString(R.string.facebook_app_id));
         config.setFacebookPermissions(null);
         //google
-        config.setGoogleApiClient(null);
+//        config.setGoogleApiClient(null);
         // TODO: 19-03-2019 For Required token use setClient_id
         config.setClient_id("69330385257-2rsavptvq95t5gfeas8ru1jjq52em4tf.apps.googleusercontent.com");//https://developers.google.com/identity/sign-in/android/start credentials.json
         //linkdin
@@ -186,8 +186,8 @@ public class TestLibraryActivity extends AppCompatActivity implements SmartLogin
 
     @Override
     public void onGoogleLoginSuccess(SmartGoogleUser user) {
-
-        Toast.makeText(this, user.getIdToken(), Toast.LENGTH_SHORT).show();
+        Log.e("1", "onGoogleLoginSuccess: " + user.getToken());
+        Log.e("2", "onGoogleLoginSuccess: " + user.getIdToken());
         refreshLayout();
 
     }
@@ -199,7 +199,7 @@ public class TestLibraryActivity extends AppCompatActivity implements SmartLogin
         Log.e("3", "onLinkedinLoginSuccess: " + user.getLastName());
         Log.e("4", "onLinkedinLoginSuccess: " + user.getPhotoUrl());
         Log.e("5", "onLinkedinLoginSuccess: " + user.getEmail());
-        Log.e("6", "onLinkedinLoginSuccess: " + user.getIdToken());
+        Log.e("6", "onLinkedinLoginSuccess: " + user.getToken());
     }
 
     @Override
@@ -209,7 +209,7 @@ public class TestLibraryActivity extends AppCompatActivity implements SmartLogin
         Log.e("3", "onTwitterLoginSuccess: " + user.getScreenName());
         Log.e("4", "onTwitterLoginSuccess: " + user.getPhotoUrl());
         Log.e("5", "onTwitterLoginSuccess: " + user.getEmail());
-        Log.e("6", "onTwitterLoginSuccess: " + user.getIdToken());
+        Log.e("6", "onTwitterLoginSuccess: " + user.getToken());
     }
 
     @Override
@@ -229,9 +229,9 @@ public class TestLibraryActivity extends AppCompatActivity implements SmartLogin
                 Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
             }
         } catch (PackageManager.NameNotFoundException e) {
-            Log.d("error", e.getMessage(), e);
+            Log.d("error", e.getMessage());
         } catch (NoSuchAlgorithmException e) {
-            Log.d("error", e.getMessage(), e);
+            Log.d("error", e.getMessage());
         }
     }
 }
