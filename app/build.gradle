@@ -25,16 +25,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
-//    implementation "com.facebook.android:facebook-android-sdk:$facebook_sdk_version"
-//    // Google Play Services
-//    implementation "com.google.android.gms:play-services-auth:$google_play_services_auth_version"
-//    implementation "com.google.firebase:firebase-auth:$firebase_auth_version"
-//    // GSON lib
-//    implementation "com.google.code.gson:gson:$gson_version"
-//
-//    implementation "com.twitter.sdk.android:twitter-core:$twitter_version"
-//    implementation "com.twitter.sdk.android:tweet-ui:$twitter_version"
-//    implementation 'com.github.irshadsparky:Social:V0.2'
-    implementation project(':SocialLogin')
+    implementation 'com.sociallogin:library:0.3'
 }
 apply plugin: 'com.google.gms.google-services'

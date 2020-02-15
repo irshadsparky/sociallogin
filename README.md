@@ -15,11 +15,11 @@ Add it in your root build.gradle at the end of repositories:
 	allprojects {
 		repositories {
 			...
-			maven { url 'https://jitpack.io' }
+			  url  "https://dl.bintray.com/ir9977/SocialLogin"
 		}
 	}
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.irshadsparky:sociallogin:V0.5'
+	            implementation 'com.sociallogin:library:0.3'
 	}
